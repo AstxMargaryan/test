@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .api.docktor import get_available_times, docktors
+from .api.users import register, login, log_out
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/available_times', get_available_times, name='available_times'),
+    path('api/register', register),
+    path('api/login', login),
+    path('api/logout', log_out),
+    path("home", docktors)
 ]

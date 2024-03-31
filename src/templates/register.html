@@ -1,0 +1,12 @@
+<h1> Register here</h1>
+
+<form action="/api/register" method="post">
+    {% csrf_token %}
+    <legend><h1>Please fill the following info</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <input type="text" name="first_name" id="first_name" value="" placeholder ="Firstname">
+    <input type="text" name="last_name" id="last_name" value="" placeholder ="Lastname">
+    <input type="text" name="username" id="username" value="" placeholder ="Username">
+    <input type="password" name="password" id="password" value="" placeholder ="Password">
+    <input style = "background-color:hotpink; " type="submit" value="Sign up">
+</form>

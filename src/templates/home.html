@@ -1,0 +1,15 @@
+<h1> Welcome to Home Page!</h1>
+{% if error %}
+   <h2 style="color:red;"> {{error}}</h2>
+    <a href="/api/login">Login</a>
+{% else %}
+    <h2 style="color:red">{{ name }}</h2>
+    {% for d in docktors %}
+        <ul>
+            <li>
+                <a href="/api/available_times" > &#x2a; {{d.name}} - {{ d.surname }} - {{ d.profession}}</a>
+            </li>
+        </ul>
+    {% endfor %}
+    <a href="/api/logout">Log out</a>
+{% endif %}
