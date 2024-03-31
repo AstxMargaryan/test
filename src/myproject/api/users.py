@@ -16,6 +16,10 @@ def register(request):
         user.save()
         puser = Patient(user=user)
         puser.save()
+        import string
+        import random
+
+        ApiKey(user=puser, api_key=''.join(random.choice(string.ascii_lowercase) for i in range(16))).save()
         return HttpResponseRedirect("/api/login")
 
 
